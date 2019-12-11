@@ -1,0 +1,2 @@
+# practice
+dummy algorithm practice
