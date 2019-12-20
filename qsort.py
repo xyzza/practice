@@ -2,11 +2,16 @@ from random import randint
 
 
 def qsort(collection):
-    if len(collection)<1:
-        return []
-    main = collection[-1]
-    left = [el for el in collection[:-1] if el < main]
-    right = [el for el in collection[:-1] if el >= main]
+    if len(collection)<2:
+        return collection
+
+    rand_index = randint(0, len(collection)-1)
+    main = collection[rand_index]
+
+    collection = collection[:rand_index] + collection[rand_index+1:]
+
+    left = [el for el in collection if el < main]
+    right = [el for el in collection if el >= main]
     return qsort(left) + [main,] + qsort(right)
 
 
