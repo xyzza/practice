@@ -53,3 +53,48 @@ assert min_distance(graph, 'BEGIN', 'END') == 6
 assert min_distance(graph2, 'BEGIN', 'END') == 2
 assert min_distance(graph3, 'BEGIN', 'END') == 1
 assert min_distance(graph, 'BEGIN', 'NOWHERE') == 'inf'
+
+
+
+# alternate realisation
+
+graph = {
+    'BEGIN': {'A': 6, 'B': 2},
+    'A': {'END': 1, 'END2': 100},
+    'B': {'A': 3, 'END': 5},
+    'END': {},
+    'END2': {}
+}
+
+
+from collections import defaultdict
+
+
+def search(graph, parent, children, costs, paths):
+
+    for node, cost in children.items():
+        from_parent_cost = costs[parent] + cost
+        if from_parent_cost == float('inf'):
+            costs[node] = cost
+            paths[node] = parent
+        elif from_parent_cost < costs[node]:
+            costs[node] = from_parent_cost
+            paths[node] = parent
+        search(graph, node, graph[node], costs, paths)
+
+    return costs, paths
+
+
+costs, paths = search(
+    graph,
+    'BEGIN', 
+    graph['BEGIN'], 
+    defaultdict(lambda : float('inf')), 
+    dict(),
+)
+assert costs['END'] == 6
+print(costs)
+tail = 'END'
+while tail in paths:
+    print(tail)
+    tail = paths[tail]
