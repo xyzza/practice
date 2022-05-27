@@ -1,0 +1,32 @@
+Generate all permutations of a set
+
+Example: (1,2,3)
+
+(1) * (2,3)
+
+(1) * ( (2,3), (3,2) )
+
+(1,2) -> (1,2), (2,1)
+
+Output:
+
+(1, 2, 3), (1, 3, 2), (2, 1, 3), (2, 3, 1), (3, 1, 2), (3, 2, 1)
+
+
+recursion base
+permutation of a single element is that element
+if len(input) is one, we have to return that element as tuple of one
+
+recursion body
+# apply recursion call to left
+
+for index i in all inputs
+
+left would be a i-th element
+right would be all other elements before i-th + after i-th
+
+for all perm of right
+result would be left + j perm from right
+
+
+return result
