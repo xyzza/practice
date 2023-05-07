@@ -12,4 +12,8 @@ def select_sort(collection):
             _max = element
             _max_index = index
 
-    return select_sort(collection[:_max_index] + collection[_max_index+1:]) + [_max,]
+    return select_sort(
+        collection[:_max_index] + collection[_max_index + 1 :]
+    ) + [
+        _max,
+    ]

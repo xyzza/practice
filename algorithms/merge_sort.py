@@ -40,7 +40,6 @@ TEST_DATA = (
 
 
 def merge_sort(data):
-
     def _merge(left, right):
         result = []
         while left and right:

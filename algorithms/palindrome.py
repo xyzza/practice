@@ -8,10 +8,10 @@ def is_palindrome(string):
 
     left_index = 0
     right_index = len(string) - 1
-    result = False # not palindrome by default
+    result = False  # not palindrome by default
 
     while left_index <= right_index:
-        
+
         if not string[left_index].isalpha():
             left_index += 1
             continue
@@ -26,7 +26,9 @@ def is_palindrome(string):
 
         left_index += 1
         right_index -= 1
-        result = True # we are iterating the string containing alphabetic symbols
+        result = (
+            True  # we are iterating the string containing alphabetic symbols
+        )
 
     return result
 

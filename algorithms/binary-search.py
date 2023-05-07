@@ -5,11 +5,11 @@ binary search algorithm implementation
 
 
 def binary_search(collection, value):
-    
+
     left = 0
     right = len(collection) - 1
 
-    while left<=right:
+    while left <= right:
 
         middle = (left + right) // 2
 
@@ -26,10 +26,11 @@ def binary_search(collection, value):
 
     return None
 
+
 # tests:
 assert binary_search([], 1) is None
-assert binary_search([1,3,7,9,15,17,19,23], 1) == 0
-assert binary_search([1,3,7,9,15,17,19,23], 23) == 7
+assert binary_search([1, 3, 7, 9, 15, 17, 19, 23], 1) == 0
+assert binary_search([1, 3, 7, 9, 15, 17, 19, 23], 23) == 7
 assert binary_search([x for x in range(1, 11)], 1) == 0
 assert binary_search([x for x in range(100)], 25) == 25
 assert binary_search([-3, -1, 4, 7, 10, 21], -1) == 1

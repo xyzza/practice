@@ -3,7 +3,7 @@ from typing import List
 
 class Node:
     name: str
-    children: List['Node']
+    children: List["Node"]
 
     def __init__(self, name, children):
         self.name = name
@@ -36,15 +36,15 @@ def search(root, destination):
     return None
 
 
-children_b = [Node('E', [])]
-children_c = [Node('F', [])]
-children_d = [Node('G', [Node('Last', [])])]
-children = [Node('B', children_b), Node('C', children_c), Node('D', children_d)]
-root = Node('A', children)
+children_b = [Node("E", [])]
+children_c = [Node("F", [])]
+children_d = [Node("G", [Node("Last", [])])]
+children = [Node("B", children_b), Node("C", children_c), Node("D", children_d)]
+root = Node("A", children)
 
 
-assert search(root, 'A') == 0
-assert search(root, 'C') == 1
-assert search(root, 'E') == 2
-assert search(root, 'Last') == 3
-assert search(root, 'Nowheree') is None
+assert search(root, "A") == 0
+assert search(root, "C") == 1
+assert search(root, "E") == 2
+assert search(root, "Last") == 3
+assert search(root, "Nowheree") is None

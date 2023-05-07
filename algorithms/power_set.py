@@ -1,10 +1,16 @@
 def foo(some_set: set) -> list:
     result = []
     if not some_set:
-        return [some_set,]
+        return [
+            some_set,
+        ]
 
     left = some_set.pop()
-    left = set([left,])
+    left = set(
+        [
+            left,
+        ]
+    )
 
     right = foo(set(some_set))
 

@@ -1,5 +1,4 @@
 class StaticArray:
-
     def __init__(self, sequence):
         self._data = [el for el in sequence]
 

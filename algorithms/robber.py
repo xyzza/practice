@@ -7,9 +7,14 @@ Find the maximum price of goods that may be collected without triggering alarm
 TESTS = [
     ([2, 7, 9, 3, 0, 0, 0, 0, 1000], 1011),
     ([2, 7, 9, 3, 1], 12),
-    ([2, ], 2),
+    (
+        [
+            2,
+        ],
+        2,
+    ),
     ([], 0),
-    ([2,1,1,2], 4),
+    ([2, 1, 1, 2], 4),
 ]
 
 
