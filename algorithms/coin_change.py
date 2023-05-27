@@ -15,7 +15,7 @@ TESTS = [
 
 
 def main(coins: list[int], amount: int) -> int:
-    @lru_cache(2000)
+    @lru_cache(None)
     def dp(i) -> int:
 
         if i == 0:
